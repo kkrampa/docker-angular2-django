@@ -1,0 +1,15 @@
+{
+  "name": "eat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "5.10.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "sh postdeploy.sh"
+  },
+  "author": "",
+  "license": "ISC"
+}
