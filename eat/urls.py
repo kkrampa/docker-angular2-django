@@ -23,5 +23,4 @@ from django.conf import settings
 urlpatterns = [
     url(r'^(?:index.html)?$', serve, kwargs={'path': 'index.html'}),
     url(r'^api/', include('eat.api.urls'))
-    # url(r'^admin/', admin.site.urls),
 ] + static('/', document_root=settings.STATIC_ROOT)
