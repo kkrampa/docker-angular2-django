@@ -6,16 +6,23 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { environment } from '../environments/environment';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+
+import routes from './app.routes';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routes
   ],
   providers: [{provide: 'API_URL', useValue: environment.apiUrl}],
   bootstrap: [AppComponent]
