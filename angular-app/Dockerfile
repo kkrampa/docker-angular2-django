@@ -11,8 +11,9 @@ RUN \
   make &&\
   make install
 
-COPY package.json /code/
-RUN npm install
+COPY . /code/
+RUN npm install -g yarn
+RUN yarn install --pure-lockfile
 
 EXPOSE 4200
 EXPOSE 49153
