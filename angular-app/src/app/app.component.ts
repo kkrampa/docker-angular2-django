@@ -1,5 +1,4 @@
-import { Component, Inject } from '@angular/core';
-import { Http } from '@angular/http';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +7,4 @@ import { Http } from '@angular/http';
 })
 export class AppComponent {
   title = 'app works!';
-
-  constructor(private http: Http, @Inject('API_URL') private apiUrl: string) {
-    http.get(`${apiUrl}/api/`)
-      .subscribe(response => {
-        const data = response.json();
-        this.title = data.test;
-      });
-  }
 }

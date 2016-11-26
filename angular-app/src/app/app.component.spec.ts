@@ -14,6 +14,7 @@ describe('App: AngularApp', () => {
         AppComponent
       ],
       providers: [
+        {provide: 'API_URL', useValue: 'http://localhost'}
       ],
       imports: [ RouterTestingModule, HttpModule ]
     });
@@ -29,12 +30,5 @@ describe('App: AngularApp', () => {
     let fixture = TestBed.createComponent(AppComponent);
     let app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('app works!');
-  }));
-
-  it('should render title in a h1 tag', async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    let compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
   }));
 });
