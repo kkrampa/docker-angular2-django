@@ -2,6 +2,10 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HttpModule } from '@angular/http';
+
+
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('App: AngularApp', () => {
   beforeEach(() => {
@@ -9,6 +13,9 @@ describe('App: AngularApp', () => {
       declarations: [
         AppComponent
       ],
+      providers: [
+      ],
+      imports: [ RouterTestingModule, HttpModule ]
     });
   });
 

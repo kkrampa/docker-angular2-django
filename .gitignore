@@ -8,3 +8,4 @@ localsettings.py
 /static/
 .sass-cache
 *.pyc
+npm-debug.log

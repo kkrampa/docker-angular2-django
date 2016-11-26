@@ -1,0 +1,26 @@
+version: '2'
+services:
+ db:
+   image: postgres
+ angular-app:
+   build: angular-app
+   ports:
+    - "4200:4200"
+    - "49153:49153"
+   volumes:
+    - ./angular-app:/code
+    - /code/node_modules/
+   depends_on:
+    - web
+ web:
+   build: .
+   entrypoint: ./wait-for-it.sh db:5432 --
+   command: python manage.py runserver 0.0.0.0:8000
+   environment:
+     - DJANGO_SETTINGS_MODULE=eat.docker_settings
+   volumes:
+     - .:/code
+   ports:
+     - "8000:8000"
+   depends_on:
+     - db
