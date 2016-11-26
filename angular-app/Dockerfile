@@ -26,8 +26,17 @@ RUN chmod a+x /usr/bin/google-chrome
 COPY package.json /code/
 COPY yarn.lock /code/
 
+RUN adduser nonroot
+RUN chown -R nonroot /home/nonroot
+RUN chown -R nonroot /code/
+RUN chown -R nonroot /usr/local
+
+USER nonroot
+
 RUN npm install -g yarn@0.17.9
-RUN npm install
+RUN yarn install
+
+USER root
 
 EXPOSE 4200
 EXPOSE 49153
