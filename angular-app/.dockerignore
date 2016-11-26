@@ -1,1 +1,4 @@
 node_modules/
+karma-*
+yarn-error.log
+.com.google.Chrome.*

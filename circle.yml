@@ -1,0 +1,11 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker build --rm=false -t circleci/angular-app angular-app/
+
+test:
+  override:
+    - docker run -v `pwd`/angular-app:/code -v /code/node_modules/ -t circleci/angular-app xvfb-daemon-run yarn test -- --watch false

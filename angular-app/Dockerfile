@@ -25,8 +25,9 @@ RUN chmod a+x /usr/bin/google-chrome
 
 COPY package.json /code/
 COPY yarn.lock /code/
-RUN npm install -g yarn
-RUN yarn install --pure-lockfile
+
+RUN npm install -g yarn@0.17.9
+RUN npm install
 
 EXPOSE 4200
 EXPOSE 49153
